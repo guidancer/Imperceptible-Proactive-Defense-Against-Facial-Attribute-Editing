@@ -52,3 +52,5 @@ U2Net路径：'./face_sod_u2net/ckpts/'
 ## 相关工作
 本工作部分基于 [CMUA-Watermark](https://github.com/VDIGPKU/CMUA-Watermark) 、 [WaveGAN](https://github.com/kobeshegu/ECCV2022_WaveGAN) 、 [DenseNet](https://github.com/bamos/densenet.pytorch)、[U2Net](https://github.com/xuebinqin/U-2-Net)和[Fixed-Point-GAN
 ](https://github.com/mahfuzmohammad/Fixed-Point-GAN).感谢他们高质量的工作.
+
+有任何相关问题均可以联系：fyf200613@qq.com或者202212490275@nuist.edu.cn
