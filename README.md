@@ -11,7 +11,9 @@
 ## 数据集与预训练模型
 
 数据集使用CelebA数据集,具体下载可参考[CMUA-Watermark](https://github.com/VDIGPKU/CMUA-Watermark) 
+
 人脸属性编辑模型StarGAN、AttentionGAN、AttGAN、FGAN的预训练权重与本文训练的U2Net的预训练权重及自建数据集均可从百度网盘进行下载,并相应修改settings.json中的路径配置微数据集解压后的具体存储路径.
+
 点击([Pretrained Weights](https://pan.baidu.com/s/1AMhVnrcB4OIUOwym8tP7eA?pwd=msch))下载本文方法涉及的预训练权重,按照路径存放相应的权重.
 
 ```xml
