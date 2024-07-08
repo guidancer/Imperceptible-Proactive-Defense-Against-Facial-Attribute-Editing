@@ -58,7 +58,7 @@ def norm(x):
 
 """Set Training Details"""
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-n_epochs = 100
+n_epochs = 41
 seed_code = 3407
 epsilon = 0.05
 num_attrs = 5 
