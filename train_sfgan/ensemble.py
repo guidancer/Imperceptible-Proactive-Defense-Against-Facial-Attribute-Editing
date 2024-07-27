@@ -58,7 +58,7 @@ def norm(x):
 
 """Set Training Details"""
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-n_epochs = 41
+n_epochs = 45
 seed_code = 3407
 epsilon = 0.05
 num_attrs = 5 
@@ -77,9 +77,9 @@ if __name__ == '__main__':
     config_parser.add_argument('--lambda_visual', default=5, type=float, help='lambda_visual')
     config_parser.add_argument('--lambda_gan', default=0.01, type=float, help='lambda_gan')
     config_parser.add_argument('--lr', default=0.0001, type=float, help='Learning Rate')
-    wt_fgan=0.3
-    wt_attentiongan=0.6
-
+    
+    wt_fgan=0.025
+    wt_attentiongan=0.125
     """
     Parse Options Args
     """
@@ -181,11 +181,7 @@ if __name__ == '__main__':
             loss_fgan_adv /= num_attrs
             loss_attgan_adv /= num_attrs
             loss_attentiongan_adv /= num_attrs
-            scale_fgan_adv = loss_scale(loss_attgan_adv.detach(), loss_fgan_adv.detach())
-            scale_attentiongan_adv = loss_scale(loss_attgan_adv.detach(), loss_attentiongan_adv.detach())
-            loss_fgan_adv_scaled = loss_fgan_adv*scale_fgan_adv
-            loss_attentiongan_adv_scaled = loss_attentiongan_adv*scale_attentiongan_adv
-            loss_adv = loss_attgan_adv + loss_fgan_adv_scaled*wt_fgan + loss_attentiongan_adv_scaled*wt_attentiongan
+            loss_adv = loss_attgan_adv + loss_attentiongan_adv*wt_attentiongan + loss_fgan_adv*wt_fgan
             
             """Cal Total Loss"""
             loss_visual = mse_loss(adv_img_a,img_a_cuda)
